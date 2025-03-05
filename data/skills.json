@@ -1,0 +1,30 @@
+[
+  {
+    "skill": "HTML",
+    "proficiency": "80%"
+  },
+  {
+    "skill": "CSS",
+    "proficiency": "75%"
+  },
+  {
+    "skill": "JavaScript",
+    "proficiency": "70%"
+  },
+  {
+    "skill": "React",
+    "proficiency": "65%"
+  },
+  {
+    "skill": "Node.js",
+    "proficiency": "60%"
+  },
+  {
+    "skill": "UI/UX Design",
+    "proficiency": "70%"
+  },
+  {
+    "skill": "Python",
+    "proficiency": "50%"
+  }
+]

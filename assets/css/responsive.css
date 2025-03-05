@@ -1,0 +1,38 @@
+/* 
+  这个文件包含响应式设计的样式，确保网页适应不同屏幕尺寸。
+*/
+
+@media (max-width: 1200px) {
+    /* 针对大屏幕设备的样式 */
+}
+
+@media (max-width: 992px) {
+    /* 针对中等屏幕设备的样式 */
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .profile-card {
+        margin: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 针对超小屏幕设备的样式 */
+}

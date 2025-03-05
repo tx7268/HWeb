@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 页面元信息 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简介 | 何维</title>
+    <!-- 外部样式表引入 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<!-- 导航栏部分 -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#about" class="active"><i class="fas fa-user"></i> 关于我</a></li>
+            <li><a href="#skills"><i class="fas fa-code"></i> 技能栈</a></li>
+            <li><a href="#skill-progress"><i class="fas fa-chart-bar"></i> 技能熟练度</a></li>
+            <li><a href="#education"><i class="fas fa-graduation-cap"></i> 教育经历</a></li>
+            <li><a href="#projects"><i class="fas fa-project-diagram"></i> 作品展示</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> 联系我</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 主要内容区域 -->
+<div id="fullpage">
+    <!-- 个人介绍部分 -->
+    <div class="section" id="about">
+        <div class="intro-container">
+            <h1>何维</h1>
+            <p class="subtitle">前端工程师、嵌入式工程师、CV工程师、python工程师</p>
+            <div class="intro-text">
+                <p>年龄 ：21</p>
+                <p>学历 ：本科</p>
+                <p>热爱编程，专注web开发</p>
+                <p>追求代码质量与用户体验</p>
+                <p>爱好：阅读、旅行、摄影、健身</p>
+                <p>座右铭 ： 天行健，君子以自强不息。地势坤，君子以厚德载物。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 技能栈展示部分 -->
+    <div class="section" id="skills">
+        <div class="skills-container">
+            <h2>技能栈</h2>
+            <div class="skills-grid">
+                <!-- 每个技能项使用统一的描述模板 -->
+                <div class="skill-item" onclick="toggleSkill(this)">
+                    <div class="skill-header">
+                        <img src="assets/images/tools/VS Code.svg" alt="VS Code">
+                        <span>VS Code</span>
+                    </div>
+                    <div class="skill-detail">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item" onclick="toggleSkill(this)">
+                    <div class="skill-header">
+                        <img src="assets/images/tools/webstorm.svg" alt="WebStorm">
+                        <span>WebStorm</span>
+                    </div>
+                    <div class="skill-detail">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item" onclick="toggleSkill(this)">
+                    <div class="skill-header">
+                        <img src="assets/images/tools/Altiumdesigner.svg" alt="Altium">
+                        <span>Altium</span>
+                    </div>
+                    <div class="skill-detail">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item" onclick="toggleSkill(this)">
+                    <div class="skill-header">
+                        <img src="assets/images/tools/Armkeil.svg" alt="Armkeil">
+                        <span>Armkeil</span>
+                    </div>
+                    <div class="skill-detail">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item" onclick="toggleSkill(this)">
+                    <div class="skill-header">
+                        <img src="assets/images/tools/matlab.svg" alt="matlab">
+                        <span>Matlab</span>
+                    </div>
+                    <div class="skill-detail">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item" onclick="toggleSkill(this)">
+                    <div class="skill-header">
+                        <img src="assets/images/tools/Multisim.svg" alt="Multisim">
+                        <span>Multisim</span>
+                    </div>
+                    <div class="skill-detail">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item" onclick="toggleSkill(this)">
+                    <div class="skill-header">
+                        <img src="assets/images/tools/Stm.svg" alt="Stm">
+                        <span>Stm</span>
+                    </div>
+                    <div class="skill-detail">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-item" onclick="toggleSkill(this)">
+                    <div class="skill-header">
+                        <img src="assets/images/tools/pycharm.svg" alt="PyCharm">
+                        <span>PyCharm</span>
+                    </div>
+                    <div class="skill-detail">
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 技能熟练度展示部分 -->
+    <div class="section" id="skill-progress">
+        <div class="skills-wrapper">
+            <h2 class="section-title">技能熟练度</h2>
+            <div class="skills-mastery-grid">
+                <!-- 第一行 -->
+                <div class="skill-mastery-item" onclick="toggleMasteryDetail(this)">
+                    <div class="skill-mastery-header">
+                        <img src="assets/images/tools/VS Code.svg" alt="VS Code">
+                        <span>VS Code</span>
+                    </div>
+                    <div class="mastery-progress">
+                        <div class="mastery-bar">
+                            <div class="mastery-fill" data-progress="95"></div>
+                        </div>
+                        <span class="mastery-percentage">95%</span>
+                    </div>
+                    <div class="skill-mastery-detail">
+                        <h4>核心技能</h4>
+                        <ul>
+                            <li>插件开发与定制
+                            <li>
+                            <li>调试工具配置</li>
+                            <li>自动化工作流</li>
+                            <li>代码规范管理</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-mastery-item" onclick="toggleMasteryDetail(this)">
+                    <div class="skill-mastery-header">
+                        <img src="assets/images/tools/webstorm.svg" alt="WebStorm">
+                        <span>Web Storm</span>
+                    </div>
+                    <div class="mastery-progress">
+                        <div class="mastery-bar">
+                            <div class="mastery-fill" data-progress="90"></div>
+                        </div>
+                        <span class="mastery-percentage">90%</span>
+                    </div>
+                    <div class="skill-mastery-detail">
+                        <h4>前端开发技能</h4>
+                        <ul>
+                            <li>前端框架深度开发</li>
+                            <li>版本控制高效集成</li>
+                            <li>代码质量实时检测</li>
+                            <li>智能代码补全优化</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-mastery-item" onclick="toggleMasteryDetail(this)">
+                    <div class="skill-mastery-header">
+                        <img src="assets/images/tools/Altiumdesigner.svg" alt="Altium">
+                        <span>Altium</span>
+                    </div>
+                    <div class="mastery-progress">
+                        <div class="mastery-bar">
+                            <div class="mastery-fill" data-progress="90"></div>
+                        </div>
+                        <span class="mastery-percentage">90%</span>
+                    </div>
+                    <div class="skill-mastery-detail">
+                        <h4>PCB设计技能</h4>
+                        <ul>
+                            <li>多层PCB精准布线</li>
+                            <li>高速信号完整性分析</li>
+                            <li>元件库定制与管理</li>
+                            <li>电磁兼容仿真验证</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-mastery-item" onclick="toggleMasteryDetail(this)">
+                    <div class="skill-mastery-header">
+                        <img src="assets/images/tools/Armkeil.svg" alt="Armkeil">
+                        <span>Armkeil</span>
+                    </div>
+                    <div class="mastery-progress">
+                        <div class="mastery-bar">
+                            <div class="mastery-fill" data-progress="90"></div>
+                        </div>
+                        <span class="mastery-percentage">90%</span>
+                    </div>
+                    <div class="skill-mastery-detail">
+                        <h4>嵌入式开发技能</h4>
+                        <ul>
+                            <li>RTOS系统集成</li>
+                            <li>移植嵌入式固件开发调试</li>
+                            <li>外设寄存器精准配置</li>
+                            <li>低功耗代码优化</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 第二行 -->
+                <div class="skill-mastery-item" onclick="toggleMasteryDetail(this)">
+                    <div class="skill-mastery-header">
+                        <img src="assets/images/tools/matlab.svg" alt="matlab">
+                        <span>matlab</span>
+                    </div>
+                    <div class="mastery-progress">
+                        <div class="mastery-bar">
+                            <div class="mastery-fill" data-progress="90"></div>
+                        </div>
+                        <span class="mastery-percentage">90%</span>
+                    </div>
+                    <div class="skill-mastery-detail">
+                        <h4>计算仿真技能</h4>
+                        <ul>
+                            <li>Sim仿真验证</li>
+                            <li>复杂算法建模实现</li>
+                            <li>矩阵运算性能调优</li>
+                            <li>数据可视化多维呈现</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-mastery-item" onclick="toggleMasteryDetail(this)">
+                    <div class="skill-mastery-header">
+                        <img src="assets/images/tools/Multisim.svg" alt="Multisim">
+                        <span>Multisim</span>
+                    </div>
+                    <div class="mastery-progress">
+                        <div class="mastery-bar">
+                            <div class="mastery-fill" data-progress="90"></div>
+                        </div>
+                        <span class="mastery-percentage">90%</span>
+                    </div>
+                    <div class="skill-mastery-detail">
+                        <h4>电路设计技能</h4>
+                        <ul>
+                            <li>模拟数字电路仿真</li>
+                            <li>虚拟仪器交互测试</li>
+                            <li>高频电路特性分析</li>
+                            <li>故障诊断方案优化</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-mastery-item" onclick="toggleMasteryDetail(this)">
+                    <div class="skill-mastery-header">
+                        <img src="assets/images/tools/Stm.svg" alt="Stm">
+                        <span>Stm</span>
+                    </div>
+                    <div class="mastery-progress">
+                        <div class="mastery-bar">
+                            <div class="mastery-fill" data-progress="90"></div>
+                        </div>
+                        <span class="mastery-percentage">90%</span>
+                    </div>
+                    <div class="skill-mastery-detail">
+                        <h4>hal库开发技能</h4>
+                        <ul>
+                            <li>自动化部署</li>
+                            <li>HAL库驱动开发部署</li>
+                            <li>FreeRTOS任务调试跟踪</li>
+                            <li>MCU外设图形化配置</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skill-mastery-item" onclick="toggleMasteryDetail(this)">
+                    <div class="skill-mastery-header">
+                        <img src="assets/images/tools/pycharm.svg" alt="PyCharm">
+                        <span>PyCharm</span>
+                    </div>
+                    <div class="mastery-progress">
+                        <div class="mastery-bar">
+                            <div class="mastery-fill" data-progress="90"></div>
+                        </div>
+                        <span class="mastery-percentage">90%</span>
+                    </div>
+                    <div class="skill-mastery-detail">
+                        <h4>python开发技能</h4>
+                        <ul>
+                            <li>Python全栈项目构建</li>
+                            <li>虚拟环境依赖管理</li>
+                            <li>Django/Flask框架集成</li>
+                            <li>自动化测试脚本开发</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 教育经历部分 -->
+    <div class="section" id="education">
+        <h2 class="section-title">教育经历</h2>
+        <div class="education-carousel">
+            <!-- 大一板块 -->
+            <div class="education-card active" id="freshman" onclick="nextYear('sophomore')">
+                <div class="education-year">大一学年</div>
+                <div class="education-subtitle">基础奠基|基础编程</div>
+                <div class="education-content">
+                    <div class="semester">
+                        <h3>主修课程</h3>
+                        <ul>
+                            <li>高等数学/li>
+                            <li>线性代数</li>
+                            <li>C语言编程|Arduino实践</li>
+                            <li>大学物理</li>
+                            <li>电路基础</li>
+                            <li>电路分析与实验</li>
+
+                        </ul>
+                        <div class="education-description">
+                            <p>这一年系统学习高等数学与C语言编程，掌握电路基础理论与工程制图技能，建立自动化专业认知框架</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 大二板块 -->
+            <div class="education-card hidden" id="sophomore" onclick="nextYear('junior')">
+                <div class="education-year">大二学年</div>
+                <div class="education-subtitle">专业进阶|硬件设计</div>
+                <div class="education-content">
+                    <div class="semester">
+                        <h3>主修课程</h3>
+                        <ul>
+                            <li>模拟电子技术</li>
+                            <li>数字电路设计</li>
+                            <li>嵌入式系统设计</li>
+                            <li>信号与系统分析</li>
+                            <li>单片机原理与应用</li>
+                            <li>自动控制原理基础</li>
+                        </ul>
+                        <div class="education-description">
+                            <p>这一年深入理解模拟数字电路设计，通过STM32开发实践掌握嵌入式系统构建方法，形成控制理论分析能力</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 大三板块 -->
+            <div class="education-card hidden" id="junior" onclick="nextYear('senior')">
+                <div class="education-year">大三学年</div>
+                <div class="education-subtitle">技术深化|系统集成</div>
+                <div class="education-content">
+                    <div class="semester">
+                        <h3>主修课程</h3>
+                        <ul>
+                            <li>电机与拖动控制系统</li>
+                            <li>PLC工业自动化</li>
+                            <li>传感器技术</li>
+                            <li>检测技术</li>
+                            <li>机器视觉</li>
+                            <li>ROS机器人系统</li>
+                        </ul>
+                        <div class="education-description">
+                            <p>这一年攻克PLC工业编程与机器人运动控制，在生产线仿真项目中验证系统集成思维，拓展工业自动化技术视野</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 大四板块 -->
+            <div class="education-card hidden" id="senior" onclick="nextYear('freshman')">
+                <div class="education-year">大四学年</div>
+                <div class="education-subtitle">综合应用|工业开发</div>
+                <div class="education-content">
+                    <div class="semester">
+                        <h3>主修课程</h3>
+                        <ul>
+                            <li>工业机器人集成应用</li>
+                            <li>工业物联网与SCADA系统</li>
+                            <li>智能控制技术</li>                         
+                            <li>生产系统建模与仿真</li>
+                        </ul>
+                        <div class="education-description">
+                            <p>这一年融合物联网与智能控制技术，完成工业级自动化方案设计，具备从需求分析到工程落地的完整问题解决能力</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="education-indicators">
+                <span class="indicator active" data-year="freshman"></span>
+                <span class="indicator" data-year="sophomore"></span>
+                <span class="indicator" data-year="junior"></span>
+                <span class="indicator" data-year="senior"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目作品展示部分 -->
+    <div class="section" id="projects">
+        <h2 class="section-title">作品展示</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project1.jpg" alt="智能小车项目">
+                </div>
+                <div class="project-info">
+                    <h3>智能循迹小车</h3>
+                    <p class="project-description">
+                        基于STM32的智能循迹小车设计与实现。具备自动巡线、避障、蓝牙遥控等功能。
+                        采用双驱动电机设计，通过PID算法实现精确控制，巡线精度达到95%以上。
+                    </p>
+                    <div class="project-details">
+                        <h4>主要技术：</h4>
+                        <ul>
+                            <li>STM32单片机开发</li>
+                            <li>PID控制算法</li>
+                            <li>电机驱动电路设计</li>
+                            <li>蓝牙通信模块</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span>嵌入式</span>
+                        <span>C语言</span>
+                        <span>硬件设计</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">查看详情</a>
+                        <a href="https://github.com/yourname/smart-car" class="resource-link">获取资源</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project2.jpg" alt="个人博客项目">
+                </div>
+                <div class="project-info">
+                    <h3>响应式个人博客系统</h3>
+                    <p class="project-description">
+                        使用Vue3和Node.js开发的现代化个人博客系统。支持Markdown文章编辑、
+                        评论系统、标签管理等功能，采用响应式设计适配各种设备。
+                    </p>
+                    <div class="project-details">
+                        <h4>核心功能：</h4>
+                        <ul>
+                            <li>文章的CRUD操作</li>
+                            <li>用户认证与授权</li>
+                            <li>评论与互动系统</li>
+                            <li>数据统计分析</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span>Vue3</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">查看详情</a>
+                        <a href="https://github.com/yourname/blog-system" class="resource-link">获取资源</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project3.jpg" alt="图像识别项目">
+                </div>
+                <div class="project-info">
+                    <h3>基于深度学习的垃圾分类系统</h3>
+                    <p class="project-description">
+                        使用Python和深度学习技术开发的智能垃圾分类系统。
+                        采用YOLOv5模型，实现实时物体检测和分类，准确率达到90%以上。
+                    </p>
+                    <div class="project-details">
+                        <h4>技术特点：</h4>
+                        <ul>
+                            <li>YOLOv5目标检测</li>
+                            <li>PyTorch深度学习框架</li>
+                            <li>OpenCV图像处理</li>
+                            <li>Flask Web服务</li>
+                        </ul>
+                    </div>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>深度学习</span>
+                        <span>计算机视觉</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">查看详情</a>
+                        <a href="https://github.com/yourname/waste-classification" class="resource-link">获取资源</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系方式部分 -->
+    <div class="section" id="contact">
+        <h2>联系我</h2>
+        <div class="contact-row">
+            <div class="contact-item">
+                <img src="assets/images/qq-icon.png" alt="QQ">
+                <p>1768362960</p>
+                <div class="qr-code">
+                    <img src="assets/images/QQ-qr.jpg" alt="QQ二维码">
+                </div>
+            </div>
+            <div class="contact-item">
+                <img src="assets/images/wechat-icon.png" alt="微信">
+                <p>HELLOW_sonny996</p>
+                <div class="qr-code">
+                    <img src="assets/images/wechat-qr.jpg" alt="微信二维码">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 脚本引入 -->
+<script src="https://cdn.jsdelivr.net/npm/fullpage.js/dist/fullpage.min.js"></script>
+<script src="./assets/js/main.js"></script>
+</body>
+
+</html>

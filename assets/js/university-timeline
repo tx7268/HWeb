@@ -1,0 +1,109 @@
+        // 定义变量
+        let offset = 0;
+        let maxOffset = 0;
+        let minOffset = -3;
+        let currentIndex = 0;
+        const cards = document.querySelectorAll('.card');
+        const dots = document.querySelectorAll('.dot');
+        // 获取所有卡片元素并存储在数组中
+        const slides = Array.from(document.querySelectorAll(".card"));
+        // 获取时钟表盘元素
+        const clock = document.querySelector("#clock-table");
+        // 设定起始年份为2021
+        let startYear = 2021;
+        for (let i = -60, year = startYear - 1; i < 300; i += 6) {
+            // 调用添加时钟刻度函数
+            addClockScale(i);
+            if (i % 60 === 0) {
+                // 如果为整点时，调用添加粗刻度函数
+                addThickClockScale(i, year);
+                year++;
+            }
+        }
+        // 添加时钟刻度
+        function addClockScale(degree) {
+            // 创建一个隐藏的表格元素
+            const invisibleClockTable = document.createElement("div");
+            // 添加类名
+            invisibleClockTable.className = "invisible-table";
+            // 设置旋转角度
+            invisibleClockTable.style.transform = `rotate(${degree}deg)`;
+            // 创建时钟刻度元素
+            const clockScale = document.createElement("div");
+            // 添加类名
+            clockScale.className = "clock-scale";
+            // 将时钟刻度元素添加到表格中
+            invisibleClockTable.appendChild(clockScale);
+            // 将表格添加到时钟表盘中
+            clock.appendChild(invisibleClockTable);
+        }
+        // 添加粗刻度
+        function addThickClockScale(degree, time) {
+            // 创建一个隐藏的表格元素
+            const invisibleClockTable = document.createElement("div");
+            invisibleClockTable.className = "invisible-table";
+            invisibleClockTable.style.transform = `rotate(${degree}deg)`;
+            const thickClockScale = document.createElement("div");
+            thickClockScale.className = "clock-thick";
+            const scaleContent = document.createElement("span");
+            scaleContent.textContent = `${time}`;
+            thickClockScale.appendChild(scaleContent);
+            invisibleClockTable.appendChild(thickClockScale);
+            clock.appendChild(invisibleClockTable);
+        }
+        // 向前切换卡片
+        function slideToPrev() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlide(currentIndex);
+            }
+        }
+        // 向后切换卡片
+        function slideToNext() {
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+                updateSlide(currentIndex);
+            }
+        }
+        // 旋转时钟表盘
+        function clockRotate(degree) {
+            // 根据角度旋转时钟表盘
+            clock.style.transform = `rotate(${degree}deg)`;
+        }
+        // 更新幻灯片
+        function updateSlide(index) {
+            cards.forEach((card, i) => {
+                card.classList.remove('active');
+                if (i === index) {
+                    card.classList.add('active');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.remove('active');
+                if (i === index) {
+                    dot.classList.add('active');
+                }
+            });
+
+            clockRotate(index * -60);
+        }
+        // 点击导航点切换
+        dots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                currentIndex = parseInt(dot.dataset.index);
+                updateSlide(currentIndex);
+            });
+        });
+
+        // 键盘控制
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') {
+                slideToPrev();
+            } else if (e.key === 'ArrowDown') {
+                slideToNext();
+            }
+        });
+
+        // 初始化显示
+        updateSlide(0);

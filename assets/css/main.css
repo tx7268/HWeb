@@ -1,0 +1,1570 @@
+/*
+ * 主样式表
+ * 作者: 何维
+ * 更新日期: 2024-03-xx
+ * 
+ * 文件结构:
+ * 1. 全局变量定义
+ * 2. 基础样式设置
+ * 3. 导航栏样式
+ * 4. 各个section样式
+ * 5. 组件样式
+ * 6. 响应式布局
+ */
+
+/* 1. 全局变量定义 */
+:root {
+    /* 主题颜色 */
+    --primary-color: #0066cc;    /* 主要强调色 */
+    --secondary-color: #2c3e50;  /* 次要颜色 */
+    --background-color: #f8f9fa; /* 背景色 */
+    --text-color: #333;          /* 文本颜色 */
+    
+    /* 通用样式变量 */
+    --border-radius: 10px;       /* 圆角半径 */
+    --transition: all 0.3s ease; /* 过渡效果 */
+}
+
+/* 2. 基础样式设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(-45deg, #0066b8, #1e1e1e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    font-size: 15px; /* 基础字体调小 */
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.1em;  /* 从2.2em调小 */
+}
+
+h2 {
+    font-size: 1.5em;  /* 从1.6em调小 */
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 1.3em;  /* 从1.4em调小 */
+}
+
+h4 {
+    font-size: 1.1em;  /* 从1.2em调小 */
+}
+
+p {
+    font-size: 1em;  /* 调整段落文字大小 */
+    margin: 8px 0;
+}
+
+.container {
+    width: 80%;  /* 页面内容宽度 */
+    margin: auto;  /* 居中对齐 */
+    max-width: 1200px;  /* 最大宽度限制 */
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;  /* 移动端宽度适配 */
+    }
+}
+
+/* 3. 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: -40px; /* 初始状态隐藏，只露出底部一点 */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 50px; /* 减小导航栏高度 */
+    transition: top 0.3s ease; /* 添加过渡效果 */
+}
+
+.navbar:hover {
+    top: 0; /* 鼠标悬停时完全显示 */
+}
+
+/* 添加一个透明的触发区域 */
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* 扩大上方触发区域 */
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0 1rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    font-size: 0.85em; /* 从0.9em调小 */
+    position: relative;
+    top: -2px; /* 文字向上偏移 */
+}
+
+.nav-menu a:hover {
+    color: #007bff;
+}
+
+.nav-menu a.active {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+/* 4. 各个section样式 */
+/* 4.1 关于我部分 */
+#about {
+    /* ...existing code... */
+}
+
+/* 4.2 技能栈部分 */
+#skills {
+    /* ...existing code... */
+}
+
+/* 4.3 技能熟练度部分 */
+#skill-progress {
+    /* ...existing code... */
+}
+
+/* 4.4 教育经历部分 */
+#education {
+    /* ...existing code... */
+}
+
+/* 教育经历页面样式 */
+.education-carousel {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    height: auto; /* 改为自适应高度 */
+    min-height: calc(100vh - 200px); /* 设置最小高度 */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* 修改为hidden */
+}
+
+.education-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 650px; /* 固定高度 */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* 改为相对定位 */
+    top: auto;
+    left: auto;
+    width: 100%;
+    opacity: 1;
+    visibility: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: none; /* 默认隐藏 */
+}
+
+.education-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.education-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    animation: cardSlideIn 0.6s ease-out;
+    display: flex; /* 显示当前卡片 */
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.education-year {
+    font-size: 3em;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #6e8efb, #50c1fe);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.education-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.education-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #6e8efb, #50c1fe);
+    border-radius: 3px;
+}
+
+.education-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 0; /* 添加内边距 */
+    overflow: hidden; /* 修改为hidden */
+    padding-right: 10px; /* 为滚动条留出空间 */
+    margin-bottom: 2rem; /* 为指示器留出空间 */
+}
+
+/* 移除滚动条样式 */
+.education-content::-webkit-scrollbar {
+    display: none;
+}
+
+.semester {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    height: auto; /* 自适应高度 */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    flex: none; /* 防止被压缩 */
+    margin-bottom: 1rem;
+    overflow: hidden; /* 添加overflow: hidden */
+}
+
+.semester:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.semester h3 {
+    color: #6e8efb;
+    margin-bottom: 1.2rem;
+    font-size: 1.4em;
+    font-weight: 600;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.semester h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: #6e8efb;
+    border-radius: 2px;
+}
+
+.semester ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+    height: auto; /* 自适应高度 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 响应式网格 */
+}
+
+.semester li {
+    font-size: 1em;
+    padding: 0.8rem 1rem;
+    background: rgba(110, 142, 251, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(110, 142, 251, 0.1);
+    height: auto; /* 自适应高度 */
+    padding: 1rem;
+    line-height: 1.4;
+    font-size: 1em; /* 调整字体大小 */
+}
+
+.semester li:hover {
+    transform: translateX(5px);
+    background: rgba(110, 142, 251, 0.15);
+    border-color: rgba(110, 142, 251, 0.2);
+}
+
+.education-description {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-top: auto;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    position: relative;
+    border-left: 4px solid #6e8efb;
+    margin-top: 1rem; /* 增加与课程列表的间距 */
+    padding: 1.2rem;
+    line-height: 1.6;
+    font-size: 0.95em;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 4px solid #6e8efb;
+    flex: none; /* 防止被压缩 */
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 添加切换指示器 */
+.education-indicators {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    bottom: -40px; /* 移到容器外部 */
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    width: 24px;
+    border-radius: 4px;
+    background: #6e8efb;
+}
+
+/* 添加淡入动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .education-year {
+        font-size: 2.5em;
+    }
+    
+    .semester ul {
+        grid-template-columns: 1fr; /* 单列显示 */
+    }
+    
+    .education-card {
+        padding: 1.5rem;
+        min-height: auto;
+        height: 450px; /* 移动端调整固定高度 */
+    }
+    
+    .education-year {
+        font-size: 2.2em;
+    }
+    
+    .education-subtitle {
+        font-size: 1em;
+    }
+
+    .education-carousel {
+        padding: 15px;
+        height: auto;
+        min-height: calc(100vh - 180px);
+        min-height: calc(100vh - 150px);
+    }
+
+    .semester li {
+        padding: 0.8rem;
+        font-size: 0.95em;
+    }
+
+    .education-description {
+        padding: 1rem;
+        font-size: 0.9em;
+    }
+
+    .education-card {
+        padding: 1.2rem;
+    }
+
+    .semester {
+        padding: 1rem;
+    }
+
+    .education-indicators {
+        bottom: -20px;
+    }
+}
+
+/* 4.5 项目展示部分 */
+#projects {
+    /* ...existing code... */
+}
+
+/* 4.6 联系方式部分 */
+#contact {
+    /* ...existing code... */
+}
+
+/* 5. 组件样式 */
+/* 5.1 卡片组件 */
+.card {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+}
+
+/* 5.2 进度条组件 */
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 4px;
+    transition: width 1s ease-out;
+}
+
+/* 5.3 技能卡片组件 */
+.skill-card {
+    position: relative;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.skill-card-front,
+.skill-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.skill-card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-card-front h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.skill-card-back {
+    transform: rotateY(180deg);
+    padding: 25px;
+}
+
+.skill-card-back h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.skill-card-back p {
+    margin: 10px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* 6. 响应式布局 */
+@media screen and (max-width: 1200px) {
+    /* 大屏幕适配 */
+    .skills-mastery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* 移动端适配 */
+    .skills-mastery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+    }
+    
+    .skill-mastery-header span {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    body { font-size: 13px; }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.1em; }
+    p { font-size: 0.85em; }
+}
+
+/* 个人信息卡片样式 */
+.profile-card {
+    max-width: 800px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.profile-header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-color), #0099ff);
+    color: white;
+}
+
+.avatar-container {
+    margin: 0 auto 1rem;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+.title-tags {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.profile-body {
+    padding: 2rem;
+}
+
+.info-section, .interests-section {
+    margin-bottom: 2rem;
+}
+
+.info-section h3, .interests-section h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+/* 作品展示样式 */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 固定3列 */
+    gap: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    height: calc(100vh - 120px); /* 减去标题和其他元素的高度 */
+    overflow: hidden; /* 防止出现滚动条 */
+}
+
+/* 作品展示区域样式调整 */
+.projects-grid {
+    /* 使用grid布局,固定3列 */
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 修改最小宽度为0,防止溢出 */
+    gap: 15px;
+    padding: 10px 15px; /* 增加左右内边距 */
+    width: calc(100% - 30px); /* 考虑内边距 */
+    max-width: 1600px;
+    margin: 0 auto;
+    height: calc(100vh - 120px); /* 减去标题和导航的高度 */
+    overflow: hidden; /* 防止整体滚动 */
+}
+
+.project-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: auto;
+    max-height: calc((100vh - 150px) / 1.2); /* 限制卡片最大高度 */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card {
+    /* 卡片基础样式 */
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: calc((100vh - 150px)); /* 限制最大高度 */
+    min-width: 0; /* 防止内容撑开卡片 */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 150px; /* 减小图片高度 */
+    min-height: 150px;
+    overflow: hidden;
+}
+
+.project-image {
+    /* 图片容器样式 */
+    width: 100%;
+    height: 140px; /* 减小图片高度 */
+    flex-shrink: 0; /* 防止图片被压缩 */
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-info {
+    /* 项目信息区域样式 */
+    flex: 1;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto; /* 仅在内容区域允许滚动 */
+    scrollbar-width: thin; /* Firefox细滚动条 */
+    scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+/* Chrome/Safari滚动条样式 */
+.project-info::-webkit-scrollbar {
+    width: 4px;
+}
+
+.project-info::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-info::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 4px;
+}
+
+.project-info h3 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.project-info h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    flex-shrink: 0; /* 防止标题被压缩 */
+}
+
+.project-description {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin: 5px 0;
+}
+
+.project-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0; /* 移除外边距 */
+}
+
+.project-details {
+    margin: 0.5rem 0;
+}
+
+.project-details {
+    margin: 4px 0;
+}
+
+.project-details h4 {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.project-details h4 {
+    font-size: 0.9rem;
+    margin: 4px 0;
+}
+
+.project-details ul {
+    list-style: none;
+    padding-left: 1.2rem;
+    margin: 0.3rem 0;
+    margin: 5px 0;
+    padding-left: 15px;
+}
+
+.project-details ul {
+    list-style: none;
+    padding-left: 12px;
+    margin: 4px 0;
+}
+
+.project-details li {
+    margin: 0.5rem 0;
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    font-size: 0.8rem;
+    margin: 3px 0;
+}
+
+.project-details li {
+    font-size: 0.8rem;
+    margin: 2px 0;
+    line-height: 1.3;
+}
+
+.project-tags {
+    margin: 1rem 0;
+    margin: 5px 0;
+    align-items: center;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin: 4px 0;
+}
+
+.project-tags span {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    background: #f0f0f0;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: #666;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+}
+
+.project-tags span {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    background: #f0f0f0;
+    border-radius: 12px;
+}
+
+.project-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    margin-top: auto; /* 将链接按钮固定在底部 */
+    padding-top: 5px;
+}
+
+.project-links {
+    margin-top: auto; /* 推到底部 */
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0; /* 防止按钮被压缩 */
+}
+
+.project-link, .resource-link {
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+}
+
+.project-link {
+    background: #4a90e2;
+    color: white;
+}
+
+.resource-link {
+    background: #28a745;
+    color: white;
+}
+
+.project-link:hover {
+    background: #357abd;
+}
+
+.resource-link:hover {
+    background: #218838;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 响应式布局调整 */
+@media screen and (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* 响应式布局调整 */
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* 联系方式样式 */
+.contact-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-item {
+    flex: 0 1 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 1em; /* 调整联系方式字体大小 */
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+qr-code {
+    margin-top: 15px;
+}
+
+.qr-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+}
+
+.tools-wall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.tool-icon {
+    flex: 0 0 auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+    padding: 1rem;
+}
+
+.tool-icon:hover {
+    transform: translateY(-5px);
+}
+
+.tool-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.tool-icon span {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.hero-section {
+    margin-top: 120px; /* 增加顶部间距 */
+    padding: 2rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    position: relative;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.skill-item {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skill-header img {
+    width: 40px;
+    height: 40px;
+}
+
+.skill-detail {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    margin-top: 1rem;
+}
+
+.skill-detail.active {
+    height: auto;
+    padding: 1rem 0;
+}
+
+.skill-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 4px;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.skill-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 0.5rem;
+}
+
+.section {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    text-align: center;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding-top: 60px; /* 与导航栏高度相同 */
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section.active {
+    opacity: 1;
+}
+
+.tools-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.progress-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 4px;
+    transition: width 1s ease-out;
+}
+
+.progress-text {
+    min-width: 40px;
+    text-align: right;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 300px;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+.contact-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.intro-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    max-width: 600px;
+    position: relative;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.intro-container {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.intro-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.progress-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.progress-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#fullpage {
+    position: relative;
+    z-index: 2;
+}
+
+/* 技能熟练度样式 */
+.skills-wrapper {
+    width: 100%; /* 增加容器宽度 */
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 10px;
+    height: calc(100vh - 60px); /* 减去导航栏高度 */
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* 减小内边距 */
+    overflow: hidden;
+}
+
+.qr-code img {
+    width: 200px;
+    height: 200px;
+    margin-top: 1rem;
+}
+
+
+/* 技能熟练度卡片新样式 */
+.skills-grid-large {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    position: relative;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.skill-card-front,
+.skill-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.skill-card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-card-front h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.skill-card-back {
+    transform: rotateY(180deg);
+    padding: 25px;
+}
+
+.skill-card-back h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.skill-card-back p {
+    margin: 10px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* 技能熟练度新样式 */
+.skills-mastery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列 */
+    grid-template-rows: repeat(2, 1fr);    /* 2行 */
+    gap: 15px; /* 减小间距 */
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100vh; /* 设置为视口高度 */
+    overflow: hidden; /* 防止滚动 */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px; /* 减小间距 */
+    padding: 10px;
+    flex: 1;
+    margin: 0 auto;
+    width: 100%;
+    height: calc(100vh - 120px); /* 调整高度 */
+    max-height: calc(100vh - 150px); /* 减去标题和导航栏的空间 */
+}
+
+.skill-mastery-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    min-height: unset; /* 移除最小高度限制 */
+    height: auto; /* 自适应高度 */
+    padding: 12px; /* 减小内边距 */
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    min-height: 180px; /* 减小最小高度 */
+    margin-bottom: 0;  /* 移除原有的底部间距 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    height: auto;
+    min-height: 0;
+    max-height: 100%;
+    font-size: 0.85em; /* 从0.9em调小 */
+}
+
+.skill-mastery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.skill-mastery-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    margin-bottom: 8px;
+}
+
+.skill-mastery-header img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    width: 32px; /* 减小图标大小 */
+    height: 32px;
+}
+
+.skill-mastery-header span {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    font-size: 0.95em; /* 从1em调小 */
+}
+
+.mastery-progress {
+    margin: 25px 0;
+    margin: 12px 0;
+}
+
+.mastery-bar {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    height: 10px; /* 减小进度条高度 */
+}
+
+.mastery-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), #00a0ff);
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mastery-percentage {
+    display: block;
+    text-align: right;
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+
+.skill-mastery-detail {
+    margin-top: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    margin-top: 12px;
+}
+
+.skill-mastery-detail.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-mastery-detail h4 {
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+}
+
+.skill-mastery-detail ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-mastery-detail li {
+    color: white;
+    margin: 12px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.1em;
+    font-size: 0.9em;
+    margin: 6px 0;
+    padding-left: 20px;
+}
+
+.skill-mastery-detail li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* 增加响应式支持 */
+@media screen and (max-width: 1200px) {
+    .skills-mastery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .skills-mastery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+    }
+    
+    .skill-mastery-header span {
+        font-size: 1em;
+    }
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    body { font-size: 13px; }
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.1em; }
+    p { font-size: 0.85em; }
+}
